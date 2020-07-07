@@ -25,7 +25,7 @@ version: "3.1"
 #-   |  PingAccess           |  https://localhost:9000/                               |
 #-   |  PingFederate         |  https://localhost:9999/pingfederate/app               |
 #-   |  PingDirectory        |  https://localhost:8443/   (Server=pingdirectory)      |
-#-   |  PingCentral          |  https://localhost:8443/   (Server=pingdirectory)      |
+#-   |  PingCentral          |  https://localhost:9022/                               |
 #-   +-----------------------+--------------------------------------------------------+
 #--------------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ services:
 
   pingfederate:
     image: pingidentity/pingfederate@sha256:5306cef0b44bb215625055581a320437b08bf2824cbaf8fc8fdc91d09f4e3fff
-    command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
+    command: wait-for pingdirectory:389 -t 720 -- entrypoint.sh start-server
     environment:
       - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
       - SERVER_PROFILE_PATH=lbg/pingfederate

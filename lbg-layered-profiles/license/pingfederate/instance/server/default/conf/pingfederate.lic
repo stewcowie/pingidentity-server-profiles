@@ -1,0 +1,13 @@
+ID=00073086
+WSTrustSTS=true
+OAuth=true
+SaasProvisioning=true
+Product=PingFederate
+Version=10.0
+EnforcementType=2
+Tier=Free
+IssueDate=2020-07-02
+ExpirationDate=2020-12-31
+DeploymentMethod=Traditional
+SignCode=FF07
+Signature=302C021469F841B5123358D898CB2F86D3421AC2EE9D43A802140145C3C4F831319A937DE17F448E6FAC190EF1F0
