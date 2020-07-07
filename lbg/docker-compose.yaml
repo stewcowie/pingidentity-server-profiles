@@ -34,8 +34,8 @@ services:
     image: pingidentity/pingaccess@sha256:c551a2d54f26947ce12399e8f4ecb70271b605e1a004bd9a6e65818accdda38d
     command: wait-for pingfederate:9031 -t 420 -- entrypoint.sh start-server
     environment: 
-      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=baseline/pingaccess
+      - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=lbg/pingaccess
     env_file:
       # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
       # devops user/key details for evaluation licenses and for docker image/git tags
@@ -46,7 +46,7 @@ services:
     #             /opt/in  - Inbound server-profile detail in liue of SERVER_PROFILE_URL (must be commented out)
     #volumes:
     #   - ${HOME}/projects/devops/volumes/full-stack.pingaccess:/opt/out
-    #   - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingaccess:/opt/in
+    #   - ${HOME}/projects/devops/pingidentity-server-profiles/lbg/pingaccess:/opt/in
     ports:
       - 443:443
       - 9000:9000
@@ -57,13 +57,13 @@ services:
     image: pingidentity/pingfederate@sha256:5306cef0b44bb215625055581a320437b08bf2824cbaf8fc8fdc91d09f4e3fff
     command: wait-for pingdirectory:389 -t 300 -- entrypoint.sh start-server
     environment:
-      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=baseline/pingfederate
+      - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=lbg/pingfederate
     env_file:
       - ~/.pingidentity/devops
     #volumes:
     #  - ${HOME}/projects/devops/volumes/full-stack.pingfederate:/opt/out
-    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingfederate:/opt/in
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/lbg/pingfederate:/opt/in
     ports:
       - 9031:9031
       - 9999:9999
@@ -74,13 +74,13 @@ services:
   pingdirectory:
     image: pingidentity/pingdirectory@sha256:b8261fdff6b820314a28a9e111a0d35ec96bd9fc8938a262108e1049a4e97ca8
     environment:
-      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=baseline/pingdirectory
+      - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=lbg/pingdirectory
     env_file:
       - ~/.pingidentity/devops
     #volumes:
     #  - ${HOME}/projects/devops/volumes/full-stack.pingdirectory:/opt/out
-    #  - ${HOME}/projects/devops/pingidentity-server-profiles/baseline/pingdirectory:/opt/in
+    #  - ${HOME}/projects/devops/pingidentity-server-profiles/lbg/pingdirectory:/opt/in
     ports:
       - 1636-1646:636
       - 1443-1453:443
@@ -98,8 +98,8 @@ services:
     image:  pingidentity/pingcentral@sha256:5c82b242d047c7ac7fcd5af2c0c1190bfdd4b92e1d94a64e848511198ed9838b
     command: wait-for pingcentral-db:3306 -t 7200 -- entrypoint.sh start-server
     environment:
-      - SERVER_PROFILE_URL=https://github.com/pingidentity/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=baseline/pingcentral/external-mysql-db
+      - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_PATH=lbg/pingcentral/external-mysql-db
       - PING_CENTRAL_BLIND_TRUST=true
       - PING_CENTRAL_VERIFY_HOSTNAME=false
       - MYSQL_USER=root
