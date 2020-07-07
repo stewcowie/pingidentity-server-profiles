@@ -107,6 +107,7 @@ services:
       - MYSQL_SERVICE_HOST=pingcentral-db
       - MYSQL_SERVICE_PORT=3306
       - MYSQL_DATABASE=pingcentral
+      - PING_IDENTITY_ACCEPT_EULA=YES
     env_file:
       - ${HOME}/.pingidentity/devops
     ports:
