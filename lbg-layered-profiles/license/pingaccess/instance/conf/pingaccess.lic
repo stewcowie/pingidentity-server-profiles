@@ -1,0 +1,12 @@
+ID=00073087
+Product=PingAccess
+MaxApplications=20
+Version=6.0
+EnforcementType=2
+Tier=Free
+IssueDate=2020-07-02
+ExpirationDate=2020-12-31
+DeploymentMethod=Traditional
+Name=PingAccess-6.0-Development
+SignCode=FF03
+Signature=302C021412B04FBE9982F64692339F3F9679A725FE801CA90214090EAD820BD3F354C14511CDCAC92120E0AF8F0A

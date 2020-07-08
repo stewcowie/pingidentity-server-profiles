@@ -92,10 +92,18 @@ services:
   pingdirectory:
     image: pingidentity/pingdirectory@sha256:b8261fdff6b820314a28a9e111a0d35ec96bd9fc8938a262108e1049a4e97ca8
     environment:
+      # **** SERVER PROFILES BEGIN ****
+      # Server Profile - Product License
       - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=lbg/pingdirectory
+      - SERVER_PROFILE_PATH=lbg-layered-profiles/license/pingdirectory
+      - SERVER_PROFILE_PARENT=LBG
+
+      # Base Server Profile
+      - SERVER_PROFILE_LBG_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_LBG_PATH=lbg/pingdirectory
       - USER_BASE_DN=dc=lloydstsb,dc=com
       - PD_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
+      # **** SERVER PROFILE END ****
     env_file:
       - ~/.pingidentity/devops
     #volumes:
