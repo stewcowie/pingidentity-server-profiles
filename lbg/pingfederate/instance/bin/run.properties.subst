@@ -1,7 +1,7 @@
 pf.admin.https.port=${PF_ADMIN_PORT}
 pf.admin.hostname=${PF_ADMIN_PUBLIC_HOSTNAME}
 pf.console.bind.address=0.0.0.0
-pf.console.title=Devops PingFederate
+pf.console.title=PingFederate
 pf.console.session.timeout=30
 pf.console.login.mode=multiple
 pf.console.authentication=${PF_CONSOLE_AUTHENTICATION}
