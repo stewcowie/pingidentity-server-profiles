@@ -151,7 +151,7 @@ services:
       - PING_CENTRAL_BLIND_TRUST=true
       - PING_CENTRAL_VERIFY_HOSTNAME=false
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=2Federate
+      - MYSQL_PASSWORD=2FederateM0re
       - MYSQL_SERVICE_HOST=pingcentral-db
       - MYSQL_SERVICE_PORT=3306
       - MYSQL_DATABASE=pingcentral
@@ -169,7 +169,7 @@ services:
     image: mysql@sha256:0ba38ea9c478d1e98b2f0bc0cee5a62345c9f06f78c4b48123bdc70d8d224686
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: 2Federate
+      MYSQL_ROOT_PASSWORD: 2FederateM0re
     ports:
       - "3306:3306"
     networks:
