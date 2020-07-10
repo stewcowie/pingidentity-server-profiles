@@ -33,11 +33,24 @@ services:
   pingaccess:
     image: pingidentity/pingaccess@sha256:c551a2d54f26947ce12399e8f4ecb70271b605e1a004bd9a6e65818accdda38d
     command: wait-for pingfederate:9031 -t 420 -- entrypoint.sh start-server
-    environment: 
+    environment:
+      # **** SERVER PROFILES BEGIN ****
+      # Server Profile - Product License
       - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=lbg/pingaccess
+      - SERVER_PROFILE_PATH=lbg-layered-profiles/license/pingaccess
+      - SERVER_PROFILE_PARENT=EXTENSIONS
+
+      # Server Profile - Extensions
+      - SERVER_PROFILE_EXTENSIONS_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_EXTENSIONS_PATH=lbg-layered-profiles/extensions/pingfederate
+      - SERVER_PROFILE_EXTENSIONS_PARENT=LBG
+      
+      # Base Server Profile
+      - SERVER_PROFILE_LBG_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_LBG_PATH=lbg/pingaccess
       - PA_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
       - PA_ADMIN_PUBLIC_HOSTNAME=ping.lloydstsb.com
+      # **** SERVER PROFILE END **** 
     env_file:
       # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
       # devops user/key details for evaluation licenses and for docker image/git tags
@@ -126,8 +139,15 @@ services:
     image:  pingidentity/pingcentral@sha256:5c82b242d047c7ac7fcd5af2c0c1190bfdd4b92e1d94a64e848511198ed9838b
     command: wait-for pingcentral-db:3306 -t 7200 -- entrypoint.sh start-server
     environment:
+      # **** SERVER PROFILES BEGIN ****
+      # Server Profile - Product License
       - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=lbg/pingcentral/external-mysql-db
+      - SERVER_PROFILE_PATH=lbg-layered-profiles/license/pingcentral
+      - SERVER_PROFILE_PARENT=LBG
+
+      # Base Server Profile
+      - SERVER_PROFILE_LBG_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_LBG_PATH=lbg/pingcentral/external-mysql-db
       - PING_CENTRAL_BLIND_TRUST=true
       - PING_CENTRAL_VERIFY_HOSTNAME=false
       - MYSQL_USER=root
@@ -135,7 +155,7 @@ services:
       - MYSQL_SERVICE_HOST=pingcentral-db
       - MYSQL_SERVICE_PORT=3306
       - MYSQL_DATABASE=pingcentral
-      - PING_IDENTITY_ACCEPT_EULA=YES
+      # **** SERVER PROFILE END ****
     env_file:
       - ${HOME}/.pingidentity/devops
     ports:
