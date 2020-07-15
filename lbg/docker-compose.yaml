@@ -89,7 +89,6 @@ services:
       - USER_BASE_DN=dc=lloydstsb,dc=com
       - PF_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
       - PF_ADMIN_PUBLIC_HOSTNAME=ping.lloydstsb.com
-      - SAML_ENTITY_ID=ping.lloydstsb.com
       # **** SERVER PROFILE END ****
     env_file:
       - ~/.pingidentity/devops
