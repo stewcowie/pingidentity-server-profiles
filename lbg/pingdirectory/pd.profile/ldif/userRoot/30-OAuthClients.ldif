@@ -6,9 +6,11 @@ pf-oauth-client-last-modified: 1551372046956
 pf-oauth-client-restrict-scopes: FALSE
 pf-oauth-client-require-signed-requests: FALSE
 pf-oauth-client-grant-type: authorization_code
+pf-oauth-client-redirect-uri: https://${PA_ENGINE_PUBLIC_HOSTNAME}:443/pa/oidc/cb
 pf-oauth-client-redirect-uri: https://pingaccess:443/pa/oidc/cb
 pf-oauth-client-redirect-uri: https://${PA_ENGINE_PUBLIC_HOSTNAME}/pa/oidc/cb
 pf-oauth-client-redirect-uri: https://pingaccess/pa/oidc/cb
+pf-oauth-client-redirect-uri: https://${PA_ENGINE_PUBLIC_HOSTNAME}:3000/pa/oidc/cb
 pf-oauth-client-redirect-uri: https://pingaccess:3000/pa/oidc/cb
 pf-oauth-client-redirect-uri: https://localhost:3000/pa/oidc/cb
 pf-oauth-client-supplemental-info: 22:ALLOW_EXCLUSIVE_SCOPES:false
