@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urn:AdapterConfiguration authnCtxClassRef="" isInheritAttributeSettings="false" isInheritAttributeMapping="false" maskOgnlValues="false" isInheritExtendedContractAttributes="false" name="Kerberos" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
+    <urn:Fields>
+        <urn:Field name="Domain/Realm Name">KERB-5F7EB4C241AE96EDE1500F1CC52A447A694B2C03</urn:Field>
+        <urn:Field name="Error URL Redirect"/>
+        <urn:Field name="Error Template">false</urn:Field>
+        <urn:Field name="Authentication Context Value">Kerberos</urn:Field>
+    </urn:Fields>
+    <urn:AdvancedFields>
+        <urn:Field name="Error Template">false</urn:Field>
+        <urn:Field name="Authentication Context Value">Kerberos</urn:Field>
+    </urn:AdvancedFields>
+    <urn:Tables/>
+    <urn:ExtendedContractAttributes>
+        <urn:AttributeName>telephoneNumber</urn:AttributeName>
+        <urn:AttributeName>mail</urn:AttributeName>
+        <urn:AttributeName>givenName</urn:AttributeName>
+        <urn:AttributeName>memberOf</urn:AttributeName>
+        <urn:AttributeName>sn</urn:AttributeName>
+    </urn:ExtendedContractAttributes>
+    <urn:UniqueKeyField>Username</urn:UniqueKeyField>
+    <urn:AttributeMapping>
+        <urn1:AttributeMap Name="Domain/Realm Name" Type="Adapter" Value="Domain/Realm Name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="SIDs" Type="Adapter" Value="SIDs" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="telephoneNumber" Type="Adapter" Value="telephoneNumber" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="mail" Type="Adapter" Value="mail" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="Username" Type="Adapter" Value="Username" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="givenName" Type="Adapter" Value="givenName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="memberOf" Type="Adapter" Value="memberOf" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="sn" Type="Adapter" Value="sn" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeSource Id="AD" Description="AD" Type="LDAP" DataSourceId="LDAP-1B920FBA5AF70F873540CB403B8744A33066F540" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2">
+            <urn1:Parameter Name="filter" Value="(|(sAMAccountName=${Username})(userPrincipalName=${Username})(mail=${Username}))"/>
+            <urn1:Parameter Name="search_base" Value="DC=iaglobal,DC=lloydstsb,DC=com"/>
+            <urn1:Parameter Name="search_scope" Value="SUBTREE_SCOPE"/>
+            <urn1:Parameter Name="memberof_nested_group" Value="false"/>
+        </urn1:AttributeSource>
+        <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+    </urn:AttributeMapping>
+</urn:AdapterConfiguration>

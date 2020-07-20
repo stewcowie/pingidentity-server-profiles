@@ -50,6 +50,7 @@ services:
       - SERVER_PROFILE_LBG_PATH=lbg/pingaccess
       - PA_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
       - PA_ADMIN_PUBLIC_HOSTNAME=ping.lloydstsb.com
+      - PA_LOG_LEVEL=DEBUG
       # **** SERVER PROFILE END **** 
     env_file:
       # Configuration file created when setup.sh (Getting-started project root directory) is first run to source
@@ -73,10 +74,15 @@ services:
     command: wait-for pingdirectory:389 -t 720 -- entrypoint.sh start-server
     environment:
       # **** SERVER PROFILES BEGIN ****
-      # Server Profile - Product License
+      # Server Profile - Data
       - SERVER_PROFILE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
-      - SERVER_PROFILE_PATH=lbg-layered-profiles/license/pingfederate
-      - SERVER_PROFILE_PARENT=EXTENSIONS
+      - SERVER_PROFILE_PATH=lbg-layered-profiles/config/pingfederate
+      - SERVER_PROFILE_PARENT=LICENSE
+
+      # Server Profile - Product License
+      - SERVER_PROFILE_LICENSE_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
+      - SERVER_PROFILE_LICENSE_PATH=lbg-layered-profiles/license/pingfederate
+      - SERVER_PROFILE_LICENSE_PARENT=EXTENSIONS
 
       # Server Profile - Extensions
       - SERVER_PROFILE_EXTENSIONS_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
