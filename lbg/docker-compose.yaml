@@ -65,6 +65,7 @@ services:
     #   - ${HOME}/projects/devops/pingidentity-server-profiles/lbg/pingaccess:/opt/in
     ports:
       - 443:443
+      - 3000:3000
       - 9000:9000
     networks:
       - pingnet-dmz
