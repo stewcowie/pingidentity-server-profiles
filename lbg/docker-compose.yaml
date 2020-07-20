@@ -116,6 +116,8 @@ services:
       - SERVER_PROFILE_LBG_PATH=lbg/pingdirectory
       - USER_BASE_DN=dc=lloydstsb,dc=com
       - PD_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
+      - PF_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
+      - PA_ENGINE_PUBLIC_HOSTNAME=ping.lloydstsb.com
       # **** SERVER PROFILE END ****
     env_file:
       - ~/.pingidentity/devops
