@@ -61,6 +61,8 @@ See [server profiles](https://pingidentity-devops.gitbook.io/devops/config) docs
 1. Kerberos Constrained Delegation Site Authenticator: Sites -> Site Authenticators -> KCD
 2. krb5.ini: Located in lbg-layered-profiles/extensions/pingaccess/instance/conf/krb5.ini (see https://pingidentity.sharefile.com/d-s5eed0e5e2894354a)
 
+Note:  Dev time permitting and once confirmed, the final values can later be passed as variables in the docker-compose.yaml as opposed to manaully editing.  See https://pingidentity-devops.gitbook.io/devops/config/containeranatomy/profilessubstitution
+
 ### Updating Server Profiles
 * Following any changes, the product configuration should be exported from the admin console UI and commited to the git repo to update the server profiles.
 * For PingFederate:
