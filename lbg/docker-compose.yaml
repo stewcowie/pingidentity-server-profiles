@@ -42,7 +42,7 @@ services:
 
       # Server Profile - Extensions
       - SERVER_PROFILE_EXTENSIONS_URL=https://github.com/stewcowie/pingidentity-server-profiles.git
-      - SERVER_PROFILE_EXTENSIONS_PATH=lbg-layered-profiles/extensions/pingfederate
+      - SERVER_PROFILE_EXTENSIONS_PATH=lbg-layered-profiles/extensions/pingaccess
       - SERVER_PROFILE_EXTENSIONS_PARENT=LBG
       
       # Base Server Profile
