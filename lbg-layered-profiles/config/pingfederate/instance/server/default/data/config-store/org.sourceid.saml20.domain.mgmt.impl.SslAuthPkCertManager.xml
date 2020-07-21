@@ -2,4 +2,5 @@
 <con:config xmlns:con="http://www.sourceid.org/2004/05/config">
     <con:map name="${SAML_ENTITY_ID"/>
     <con:map name="https://httpbin.org"/>
+    <con:map name="http://pingone.com/15bb0af3-2c6b-465d-a1a4-5c69ef5cb088"/>
 </con:config>

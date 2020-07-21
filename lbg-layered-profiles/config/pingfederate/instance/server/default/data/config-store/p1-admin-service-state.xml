@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:config xmlns:con="http://www.sourceid.org/2004/05/config">
+    <con:item name="ApplicationDockEndpoint">https://desktop.pingone.eu/cd-628265118.pingidentity</con:item>
+    <con:item name="ProvisioningBaseUrl">https://scim.pingone.eu/prov-service</con:item>
+    <con:item name="KeyPairAlias">rfzu2tk3dmb0cknw1if0oupb2</con:item>
+    <con:item name="ClientId">66cf271d-2ad4-4169-8332-b4ce95bad1d2</con:item>
+    <con:item name="AccountId">15bb0af3-2c6b-465d-a1a4-5c69ef5cb088</con:item>
+    <con:item name="CompanyName">stewartcowie+lbgpoc@pingidentity.com</con:item>
+    <con:item name="Associated">true</con:item>
+</con:config>
