@@ -1,10 +1,10 @@
 version: "3.1"
 
-#--------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------
 #- Ping Identity integrated demo
 #-
 #-     app    console  
-#-     443    9000     
+#-    3000    9000     
 #-      |      |       
 #-   +----------------+
 #-   |   PingAccess   |
@@ -17,17 +17,17 @@ version: "3.1"
 #-   | PingFederate  |    |  PingCentral  |    |PingDataConsole|    | PingDirectory |
 #-   +---------------+    +---------------+    +---------------+    +---------------+
 #-
-#-   +-----------------------+--------------------------------------------------------+
-#-   |  Product Console/App  |  URL                                                   |
-#-   |                       |    username: administrator                             |
-#-   |                       |    password: 2FederateM0re                             |
-#-   +-----------------------+--------------------------------------------------------+
-#-   |  PingAccess           |  https://localhost:9000/                               |
-#-   |  PingFederate         |  https://localhost:9999/pingfederate/app               |
-#-   |  PingDirectory        |  https://localhost:8443/   (Server=pingdirectory)      |
-#-   |  PingCentral          |  https://localhost:9022/                               |
-#-   +-----------------------+--------------------------------------------------------+
-#--------------------------------------------------------------------------------------
+#-   +-----------------------+------------------------------------------------------------+
+#-   |  Product Console/App  |  URL                                                       |
+#-   |                       |    username: administrator                                 |
+#-   |                       |    password: 2FederateM0re                                 |
+#-   +-----------------------+------------------------------------------------------------+
+#-   |  PingAccess           |  https://ping.lloydstsb.com:9000/                          |
+#-   |  PingFederate         |  https://ping.lloydstsb.com:9999/pingfederate/app          |
+#-   |  PingDirectory        |  https://ping.lloydstsb.com:8443/   (Server=pingdirectory) |
+#-   |  PingCentral          |  https://ping.lloydstsb.com:9022/                          |
+#-   +-----------------------+------------------------------------------------------------+
+#------------------------------------------------------------------------------------------
 
 services:
   pingaccess:
